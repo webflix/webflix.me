@@ -200,14 +200,19 @@
             </div>
             <div class="right">
                 <div id="movie-details-title" class="media-details-title"></div>
-                <div id="movie-details-rating" class="media-details-rating simptip-position-right simptip-fade simptip-smooth"></div>
+                <div id="movie-details-subtitle" class="media-details-subtitle">
+                    <div id="movie-details-rating" class="media-details-info media-details-rating simptip-position-right simptip-fade simptip-smooth"></div>
+                    <div id="movie-details-year" class="media-details-year media-details-info"></div>
+                    <div id="movie-details-runtime" class="media-details-runtime media-details-info"></div>
+                    <div id="movie-details-genres" class="media-details-genres media-details-info"></div>
+                    <a id="movie-details-trailer" class="media-details-info"><i class="icon-youtube-play" style="padding-right: 2px"></i> Play Trailer</a>
+                </div>
                 <!--<hr>
                 <div class="addthis_toolbox addthis_default_style">
                     <a class="addthis_counter addthis_pill_style"></a>
                 </div>-->
                 <hr>
                 <div id="movie-details-actors" class="media-details-actors media-details-info"></div>
-                <div id="movie-details-runtime" class="media-details-runtime media-details-info"></div>
                 <div id="movie-details-similar" class="media-details-similar media-details-info" data-loading-indicator="#movie-details-similar-loading"></div>
                 <div id="movie-details-similar-loading" class="media-details-similar media-details-info">Loading similar movies...</div>
                 <hr>
@@ -223,7 +228,6 @@
                     </div>
                     <label for="quality-switch" style="margin-left: 5px">1080p</label>
                 </div>
-                <a id="movie-details-trailer" class="media-details-btn btn-lg navigable-item"><i class="icon-youtube-play"></i> TRAILER</a>
                 <a id="movie-details-watch" class="media-details-btn btn-lg navigable-item">WATCH IT NOW</a>
             </div>
         </div>
@@ -243,14 +247,18 @@
             </div>
             <div class="right scroll">
                 <div id="tv-details-title" class="media-details-title"></div>
-                <div id="tv-details-rating" class="media-details-rating simptip-position-right simptip-fade simptip-smooth"></div>
+                <div id="tv-details-subtitle" class="media-details-subtitle">
+                    <div id="tv-details-rating" class="media-details-info media-details-rating simptip-position-right simptip-fade simptip-smooth"></div>
+                    <div id="tv-details-year" class="media-details-year media-details-info"></div>
+                    <div id="tv-details-runtime" class="media-details-runtime media-details-info"></div>
+                    <div id="tv-details-genres" class="media-details-genres media-details-info"></div>
+                </div>
                 <!--<hr>
                 <div class="addthis_toolbox addthis_default_style">
                     <a class="addthis_counter addthis_pill_style"></a>
                 </div>-->
                 <hr>
                 <div id="tv-details-actors" class="media-details-actors media-details-info"></div>
-                <div id="tv-details-runtime" class="media-details-runtime media-details-info"></div>
                 <div id="tv-details-similar" class="media-details-similar media-details-info" data-loading-indicator="#tv-details-similar-loading"></div>
                 <div id="tv-details-similar-loading" class="media-details-similar media-details-info">Loading similar shows...</div>
                 <hr>
@@ -294,6 +302,7 @@
         <div id="search-overlay-container" style="width: 0">
             <form id="search-overlay-form">
                 <input id="search-overlay-keywords" type="text" autocomplete="off" placeholder="Search for TV shows or movies...">
+                <a id="search-overlay-advanced" onclick="$('#search-overlay-keywords').submit()">Advanced</a>
             </form>
             <div id="search-overlay-result" class="search-overlay-result navigable-item" style="display: none">
                 <div class="left">
@@ -317,6 +326,7 @@
         <div class="modal-desc"></div>
         <hr>
         <div class="modal-content scroll" style="padding: 0 20px">
+            <p id="setup-modal-chrome-issue" class="warning" style="display: none">Make sure to enable plugins in Google Chrome, <a onclick="fn.openModal('#chrome-issue-modal')">click here to find out how</a>.</p>
             <p>Welcome to <span class="brand">webflix.me</span>! Here you can stream HD movies at ultrafast speeds (for free!) thanks to peer-to-peer sharing. <a href="http://en.wikipedia.org/wiki/BitTorrent_(protocol)" target="_blank">More info &raquo;</a></p>
             <p>
                 This service depends on the <a href="http://blog.bittorrent.com/2012/07/06/introducing-bittorrent-torque" target="_blank">Torque plugin</a> to enable the peer-to-peer system.
@@ -324,7 +334,7 @@
             </p>
             <p>If you are happy to install this plugin, hit the SETUP NOW button to begin using <span class="brand">webflix.me</span>.</p>
             <p style="text-align: center">
-                <small>This plugin is currently only available for <a href="https://www.google.com/intl/en/chrome/browser" target="_blank">Google Chrome</a> or <a href="http://www.mozilla.org/en-GB/firefox/new" target="_blank">Firefox</a> on Windows and Mac.</small>
+                <small>This plugin is currently only available for <a href="https://www.google.com/chrome/browser" target="_blank">Google Chrome</a> or <a href="http://mozilla.com/firefox" target="_blank">Firefox</a> on Windows and Mac.</small>
                 <a id="setup-torque" class="btn-lg">SETUP NOW</a>
             </p>
             <p class="warning"><strong>Warning</strong>: Streaming movies in this way might not be legal in your country, so use this service at your own risk.</p>
@@ -333,9 +343,25 @@
             </p>
         </div>
     </div>
+    <div id="chrome-issue-modal" class="modal scroll" style="z-index: 101; display: none">
+        <h2 class="modal-title">Plugins in Google Chrome</h2>
+        <div class="modal-desc"></div>
+        <hr>
+        <div class="modal-content scroll" style="padding: 0 20px">
+            <p>If you are experiencing issues setting up the Torque plugin, please note that Google Chrome has recently disabled the use of plugins in it's latest update.</p>
+            <p>We're working hard on a fix but in the meantime, please use the following workaround to continue using <span class="brand">webflix.me</span>:</p>
+            <ol>
+                <li>Enter <code>chrome://flags/#enable-npapi</code> into the Chrome address bar</li>
+                <li>Re-enable the NPAPI plugin setting by clicking 'Enable'</li>
+                <li>Hit 'Relaunch Now' at the bottom of the page.</li>
+            </ol>
+            <p>Alternatively, you could make the switch to <a href="http://mozilla.com/firefox" target="_blank">Firefox</a> or <a href="https://www.apple.com/safari" target="_blank">Safari</a>.</p>
+            <p>For more information on Google's decision to disable this setting by default, <a href="http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html" target="_blank">read the blog post here</a>.</p>
+        </div>
+    </div>
     <div id="settings-modal" class="modal scroll" style="display: none">
         <h2 class="modal-title">Settings</h2>
-        <div class="modal-desc"><span class="brand">webflix.me</span> 3.1.2</div>
+        <div class="modal-desc"><span class="brand">webflix.me</span> 3.1.3</div>
         <hr>
         <form class="modal-content scroll" id="settings">
             <div class="control">
@@ -667,8 +693,6 @@
         </script>
         <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     </div>
-
-    <input type="hidden" id="first-run" value="1" data-storage-id="first-run">
 
     <script type="text/javascript" src="js/vendor.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
