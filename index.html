@@ -2,8 +2,13 @@
 <html>
 <head>
     <title>webflix.me</title>
+    <meta charset="utf-8" />
     <meta name="description" content="Stream movies and TV shows in excellent DVD, 720p, 1080p and 3D quality right in your browser at ultrafast speeds.">
     <meta name="keywords" content="webflix, movie, movies, stream, streaming, torrent, torrents, tv, show, episode, web, flix, popcorn, express, popcorn express, popcornexpress, popcorn time, popcorntime, cinefi, yify, yify-torrents, yts, download, 720p, 1080p, 3D">
+
+    <meta name="og:title" content="webflix.me">
+    <meta name="og:image" content="http://webflix.me/favicon.ico">
+    <meta name="og:description" content="Stream movies and TV shows in excellent DVD, 720p, 1080p and 3D quality right in your browser at ultrafast speeds.">
 
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet" type="text/css">
@@ -21,7 +26,7 @@
     </script>
 </head>
 <body>
-    <div id="sidebar" class="scroll navigable-pane" data-pane-number="0">
+    <div id="sidebar" class="navigable-pane" data-pane-number="0">
         <a id="sidebar-bookmarks" class="navigable-item">
             <i class="icon-heart"></i>
             Bookmarks
@@ -55,13 +60,35 @@
             <span id="open-settings" class="sidebar-foot-link simptip-position-top simptip-fade simptip-smooth" title="Settings" data-tooltip="Settings">
                 <i class="icon-cog"></i>
             </span>
-            <a id="sidebar-donate" class="sidebar-foot-link" title="Donate with Bitcoin">Donate</a>
+            <span id="sidebar-donate" class="sidebar-foot-link simptip-position-top simptip-fade simptip-smooth" title="Donate with Bitcoin" data-tooltip="Donate">
+                <i class="icon-bitcoin"></i>
+            </span>
             <div id="sidebar-donate-popover" style="display: none">
                 <a id="sidebar-donate-popover-close" class="sidebar-foot-link">&times;</a>
                 <h2>Thanks for using <span class="brand">webflix.me</span>!</h2>
                 <p>If you would like to contribute to the project, please feel free to send some bitcoin our way! Any donations are hugely appreciated.</p>
                 <input value="vJmuDaTdUSmLnbcWUJRSsXdydCQ5QQgQWxidVpP5XRXqTCz7xSeGDP359kczDjC3UpQMbHjioeY1tKjNd6LhfPZt8i41T3iZ45SA4u">
                 <a href="bitcoin:vJmuDaTdUSmLnbcWUJRSsXdydCQ5QQgQWxidVpP5XRXqTCz7xSeGDP359kczDjC3UpQMbHjioeY1tKjNd6LhfPZt8i41T3iZ45SA4u" class="btn sidebar-foot-link">DONATE NOW</a>
+            </div>
+
+            <div id="sidebar-share">
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                    <a class="a2a_button_facebook sidebar-foot-link"></a>
+                    <a class="a2a_button_twitter sidebar-foot-link"></a>
+                    <a class="a2a_dd sidebar-foot-link" href="https://www.addtoany.com/share_save"></a>
+                </div>
+                <script type="text/javascript">
+                    var a2a_config = a2a_config || {};
+                    a2a_config.num_services = 10;
+                    a2a_config.color_main = "1e1e1e";
+                    a2a_config.color_border = "1e1e1e";
+                    a2a_config.color_link_text = "dddddd";
+                    a2a_config.color_link_text_hover = "ffffff";
+                    a2a_config.color_bg = "111111";
+                    a2a_config.color_arrow = "fff";
+                    a2a_config.color_arrow_hover = "fff";
+                </script>
+                <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
             </div>
         </div>
     </div>
@@ -74,7 +101,7 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="movie-bookmarks-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-bookmarks-loading-indicator"></div>
+            <div id="movie-bookmarks-results" class="results-page search-results navigable-pane" data-pane-number="1" data-loading-indicator="#movie-bookmarks-loading-indicator"></div>
         </div>
         <div class="media-search">
             <h2 class="search-media-title"><i class="icon-tv"></i> TV shows</h2>
@@ -83,7 +110,7 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="tv-bookmarks-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-bookmarks-loading-indicator"></div>
+            <div id="tv-bookmarks-results" class="results-page search-results navigable-pane" data-pane-number="2" data-loading-indicator="#tv-bookmarks-loading-indicator"></div>
         </div>
     </div>
 
@@ -95,7 +122,7 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="movie-history-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-history-loading-indicator"></div>
+            <div id="movie-history-results" class="results-page search-results navigable-pane" data-pane-number="1" data-loading-indicator="#movie-history-loading-indicator"></div>
         </div>
         <div class="media-search">
             <h2 class="search-media-title"><i class="icon-tv"></i> TV shows</h2>
@@ -104,7 +131,7 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="tv-history-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-history-loading-indicator"></div>
+            <div id="tv-history-results" class="results-page search-results navigable-pane" data-pane-number="2" data-loading-indicator="#tv-history-loading-indicator"></div>
         </div>
     </div>
 
@@ -134,7 +161,7 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="movie-search-results" class="results-page search-results navigable-pane scroll" data-pane-number="1" data-loading-indicator="#movie-search-loading-indicator"></div>
+            <div id="movie-search-results" class="results-page search-results navigable-pane" data-pane-number="1" data-loading-indicator="#movie-search-loading-indicator"></div>
         </div>
         <div class="media-search">
             <h2 class="search-media-title"><i class="icon-tv"></i> TV shows</h2>
@@ -143,18 +170,18 @@
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <div id="tv-search-results" class="results-page search-results navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-search-loading-indicator"></div>
+            <div id="tv-search-results" class="results-page search-results navigable-pane" data-pane-number="2" data-loading-indicator="#tv-search-loading-indicator"></div>
         </div>
     </div>
 
-    <div id="results" class="main results-page navigable-pane scroll" data-pane-number="1" data-loading-indicator="#results-loading-indicator"></div>
+    <div id="results" class="main results-page navigable-pane" data-pane-number="1" data-loading-indicator="#results-loading-indicator"></div>
     <div id="results-loading-indicator" class="spinner-ellipsis">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
     </div>
 
-    <div id="downloads" class="main scroll" style="display: none">
+    <div id="downloads" class="main" style="display: none">
         <div>
             <h2>Downloads</h2>
             <form id="add-torrent-form" class="clearfix">
@@ -245,7 +272,7 @@
                     <img src="">
                 </div>
             </div>
-            <div class="right scroll">
+            <div class="right">
                 <div id="tv-details-title" class="media-details-title"></div>
                 <div id="tv-details-subtitle" class="media-details-subtitle">
                     <div id="tv-details-rating" class="media-details-info media-details-rating simptip-position-right simptip-fade simptip-smooth"></div>
@@ -268,14 +295,14 @@
         <div id="tv-details-episode-select">
             <div id="tv-details-season-container">
                 <div class="header">Seasons</div>
-                <ul id="tv-details-seasons" class="navigable-pane scroll" data-pane-number="1"></ul>
+                <ul id="tv-details-seasons" class="navigable-pane" data-pane-number="1"></ul>
             </div>
             <div id="tv-details-episodes-container">
                 <div class="header">
                     Episodes
                     <small id="tv-details-episodes-loading-indicator" style="display: none">Loading...</small>
                 </div>
-                <ul id="tv-details-episodes" class="navigable-pane scroll" data-pane-number="2" data-loading-indicator="#tv-details-episodes-loading-indicator" style="display: none"></ul>
+                <ul id="tv-details-episodes" class="navigable-pane" data-pane-number="2" data-loading-indicator="#tv-details-episodes-loading-indicator" style="display: none"></ul>
             </div>
             <div id="tv-details-episode-container" class="loading" style="display: none">
                 <div id="tv-details-episode-title" class="header"></div>
@@ -285,7 +312,7 @@
                         <div id="tv-details-episode-air-date"></div>
                     </div>
                     <div class="right">
-                        <div id="tv-details-episode-desc" class="scroll"></div>
+                        <div id="tv-details-episode-desc"></div>
                     </div>
                     <div id="tv-details-episode-watch" class="navigable-pane loading" data-pane-number="3">
                         <a id="tv-details-episode-watch-btn" class="btn btn-lg navigable-item" onclick="fn.openModal('#tv-show-torrent-links-modal'); app.nav.switchView('tv-torrents')">WATCH IT NOW</a>
@@ -313,7 +340,7 @@
                     <div class="search-overlay-result-year"></div>
                 </div>
             </div>
-            <div id="search-overlay-results" class="navigable-pane scroll" data-pane-number="1"></div>
+            <div id="search-overlay-results" class="navigable-pane" data-pane-number="1"></div>
         </div>
     </div>
 
@@ -321,11 +348,11 @@
         <a class="close">&times;</a>
     </div>
 
-    <div id="setup-modal" class="modal scroll" style="display: none">
+    <div id="setup-modal" class="modal" style="display: none">
         <h2 class="modal-title brand">webflix.me</h2>
         <div class="modal-desc"></div>
         <hr>
-        <div class="modal-content scroll" style="padding: 0 20px">
+        <div class="modal-content" style="padding: 0 20px">
             <p id="setup-modal-chrome-issue" class="warning" style="display: none">Make sure to enable plugins in Google Chrome, <a onclick="fn.openModal('#chrome-issue-modal')">click here to find out how</a>.</p>
             <p>Welcome to <span class="brand">webflix.me</span>! Here you can stream HD movies at ultrafast speeds (for free!) thanks to peer-to-peer sharing. <a href="http://en.wikipedia.org/wiki/BitTorrent_(protocol)" target="_blank">More info &raquo;</a></p>
             <p>
@@ -343,11 +370,11 @@
             </p>
         </div>
     </div>
-    <div id="chrome-issue-modal" class="modal scroll" style="z-index: 101; display: none">
+    <div id="chrome-issue-modal" class="modal" style="z-index: 101; display: none">
         <h2 class="modal-title">Plugins in Google Chrome</h2>
         <div class="modal-desc"></div>
         <hr>
-        <div class="modal-content scroll" style="padding: 0 20px">
+        <div class="modal-content" style="padding: 0 20px">
             <p>If you are experiencing issues setting up the Torque plugin, please note that Google Chrome has recently disabled the use of plugins in it's latest update.</p>
             <p>We're working hard on a fix but in the meantime, please use the following workaround to continue using <span class="brand">webflix.me</span>:</p>
             <ol>
@@ -359,31 +386,33 @@
             <p>For more information on Google's decision to disable this setting by default, <a href="http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html" target="_blank">read the blog post here</a>.</p>
         </div>
     </div>
-    <div id="settings-modal" class="modal scroll" style="display: none">
+    <div id="settings-modal" class="modal" style="display: none">
         <h2 class="modal-title">Settings</h2>
-        <div class="modal-desc"><span class="brand">webflix.me</span> 3.1.3</div>
+        <div class="modal-desc"><span class="brand">webflix.me</span> 3.2</div>
         <hr>
-        <form class="modal-content scroll" id="settings">
-            <div class="control">
-                <label for="default-download-directory">Default download location</label>
-                <input id="default-download-directory" data-storage-id="settings-default-download-directory" type="text" value="">
-            </div>
-            <div class="control">
-                <label for="keep-downloaded-files">Keep downloaded files</label>
-                <input id="keep-downloaded-files" data-storage-id="settings-keep-downloaded-files" type="checkbox" checked>
-            </div>
-            <hr>
-            <div class="control">
-                <label for="autoplay-next-episode">Automatically play next episode</label>
-                <input id="autoplay-next-episode" data-storage-id="settings-autoplay-next-episode" type="checkbox" checked>
-            </div>
-            <hr>
+        <form class="modal-content" id="settings">
+            <h3 class="control control-header">Interface</h3>
             <div class="control">
                 <label for="keyboard-shortcuts">Enable keyboard shortcuts</label>
                 <a id="open-keyboard-shortcuts"><i class="icon-info"></i></a>
                 <input id="keyboard-shortcuts" data-storage-id="settings-keyboard-shortcuts" type="checkbox" checked>
             </div>
+            <div class="control">
+                <label for="default-subtitle-language">Default subtitle language</label>
+                <select id="default-subtitle-language" data-storage-id="settings-default-subtitle-language">
+                    <option value='none' selected>None</option><option value='id'>Bahasa Indonesia</option><option value='eu'>Basque</option><option value='ca'>Català</option><option value='sr'>Cрпски</option><option value='da'>Dansk</option><option value='de'>Deutsch</option><option value='et'>Eesti keel</option><option value='en'>English</option><option value='es'>Español</option><option value='eo'>Esperanto</option><option value='fr'>Français</option><option value='gl'>Galego</option><option value='ka'>Georgian</option><option value='hr'>Hrvatski jezik</option><option value='is'>Icelandic</option><option value='it'>Italiano</option><option value='hu'>Magyar</option><option value='ms'>Malay</option><option value='nl'>Nederlands</option><option value='no'>Norsk</option><option value='oc'>Occitan</option><option value='pl'>Polski</option><option value='pt'>Português</option><option value='pb'>Português (BR)</option><option value='ro'>Română</option><option value='sq'>Shqip</option><option value='sk'>Slovenčina</option><option value='sl'>Slovenščina</option><option value='fi'>Suomi</option><option value='sv'>Svenska</option><option value='tl'>Tagalog</option><option value='vi'>Tiếng Việt</option><option value='tr'>Türkçe</option><option value='cs'>Čeština</option><option value='el'>Ελληνικά</option><option value='bg'>български език</option><option value='mk'>македонски јазик</option><option value='ru'>русский язык</option><option value='uk'>українська мова</option><option value='he'>עִבְרִית</option><option value='ar'>العربية</option><option value='fa'>فارسی</option><option value='hi'>हिन्दी</option><option value='si'>සිංහල</option><option value='th'>ภาษาไทย</option><option value='km'>ភាសាខ្មែរ</option><option value='ja'>日本語</option><option value='zh'>汉语</option><option value='zt'>漢語</option><option value='ko'>한국어</option>
+                </select>
+            </div>
             <hr>
+            <h3 class="control control-header">Downloads</h3>
+            <div class="control">
+                <label for="keep-downloaded-files">Keep downloaded files</label>
+                <input id="keep-downloaded-files" data-storage-id="settings-keep-downloaded-files" type="checkbox" checked>
+            </div>
+            <div class="control">
+                <label for="default-download-directory">Default download location</label>
+                <input id="default-download-directory" data-storage-id="settings-default-download-directory" type="text" value="">
+            </div>
             <div class="control">
                 <label for="max-download-speed">Download limit <small>(0 = No limit)</small></label>
                 <span class="append">Kb/s</span>
@@ -400,7 +429,7 @@
             </div>
         </form>
     </div>
-    <div id="info-modal" class="modal modal-wide scroll" style="display: none">
+    <div id="info-modal" class="modal modal-wide" style="display: none">
         <h2 class="modal-title">About <span class="brand">webflix.me</span></h2>
         <div class="modal-desc"></div>
         <hr>
@@ -465,7 +494,7 @@
             </div>
         </div>
     </div>
-    <div id="tos-modal" class="modal scroll" style="display: none">
+    <div id="tos-modal" class="modal" style="display: none">
         <h2 class="modal-title">Terms of Service</h2>
         <div class="modal-desc"></div>
         <hr>
@@ -506,13 +535,13 @@
             </p>
         </div>
     </div>
-    <div id="keyboard-shortcuts-modal" class="modal scroll" style="display: none">
+    <div id="keyboard-shortcuts-modal" class="modal" style="display: none">
         <h2 class="modal-title">Keyboard Shortcuts</h2>
         <div class="modal-desc">
             <p>With keyboard shortcuts enabled, you can navigate <span class="brand">webflix.me</span> using these simple controls.</p>
         </div>
         <hr>
-        <div class="modal-content scroll">
+        <div class="modal-content">
             <table id="keyboard-shortcuts-table">
                 <tr>
                     <th colspan="2"><h3>Global</h3></th>
@@ -545,7 +574,7 @@
             </table>
         </div>
     </div>
-    <div id="tv-show-torrent-links-modal" class="modal scroll" style="display: none">
+    <div id="tv-show-torrent-links-modal" class="modal" style="display: none">
         <h2 class="modal-title">Sources</h2>
         <div class="modal-desc">
             <p>Choose one of the following links to begin streaming.</p>
@@ -563,7 +592,7 @@
             <div id="tv-show-torrent-links" class="navigable-pane link-list" data-pane-number="0"></div>
         </div>
     </div>
-    <div id="file-list-modal" class="modal scroll" style="display: none">
+    <div id="file-list-modal" class="modal" style="display: none">
         <h2 class="modal-title">Multiple files found</h2>
         <div class="modal-desc">This torrent contains multiple files that can be streamed by the application, please select one below to continue.</div>
         <hr>
@@ -571,7 +600,7 @@
             <div id="file-select-list" class="navigable-pane link-list" data-pane-number="0"></div>
         </div>
     </div>
-    <div id="no-files-warning-modal" class="modal scroll" style="display: none">
+    <div id="no-files-warning-modal" class="modal" style="display: none">
         <h2 class="modal-title">Invalid torrent</h2>
         <div class="modal-desc"></div>
         <hr>
@@ -604,6 +633,7 @@
             <video id="videojs-player" class="video-js vjs-default-skin" controls
                    autoplay preload="metadata" width="auto" height="auto"
                    data-setup="{}">
+                <track id="video-srt" kind="subtitles">
             </video>
         </div>
         <div id="projekktor-container">
