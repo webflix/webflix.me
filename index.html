@@ -6,9 +6,12 @@
     <meta name="description" content="Stream movies and TV shows in excellent DVD, 720p, 1080p and 3D quality right in your browser at ultrafast speeds.">
     <meta name="keywords" content="webflix, movie, movies, stream, streaming, torrent, torrents, tv, show, episode, web, flix, popcorn, express, popcorn express, popcornexpress, popcorn time, popcorntime, cinefi, yify, yify-torrents, yts, download, 720p, 1080p, 3D">
 
-    <meta name="og:title" content="webflix.me">
-    <meta name="og:image" content="http://webflix.me/css/img/screenshot.png">
-    <meta name="og:description" content="Stream movies and TV shows in excellent DVD, 720p, 1080p and 3D quality right in your browser at ultrafast speeds.">
+    <meta property="og:title" content="webflix.me">
+    <meta property="og:image" content="http://webflix.me/css/img/screenshot.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:height" content="447">
+    <meta property="og:image:width" content="675">
+    <meta property="og:description" content="Stream movies and TV shows in excellent DVD, 720p, 1080p and 3D quality right in your browser at ultrafast speeds.">
 
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet" type="text/css">
@@ -40,7 +43,7 @@
             <i class="icon-search"></i>
             Search
         </a>
-        <a id="sidebar-movies" class="navigable-item active">
+        <a id="sidebar-movies" class="navigable-item">
             <i class="icon-film"></i>
             Movies
         </a>
@@ -174,8 +177,8 @@
         </div>
     </div>
 
-    <div id="results" class="main results-page navigable-pane" data-pane-number="1" data-loading-indicator="#results-loading-indicator"></div>
-    <div id="results-loading-indicator" class="spinner-ellipsis">
+    <div id="results" class="main results-page navigable-pane" data-pane-number="1" data-loading-indicator="#results-loading-indicator" style="display: none"></div>
+    <div id="results-loading-indicator" class="spinner-ellipsis" style="display: none">
         <div class="bounce1"></div>
         <div class="bounce2"></div>
         <div class="bounce3"></div>
@@ -361,7 +364,7 @@
             </p>
             <p>If you are happy to install this plugin, hit the SETUP NOW button to begin using <span class="brand">webflix.me</span>.</p>
             <p style="text-align: center">
-                <small>This plugin is currently only available for <a href="https://www.google.com/chrome/browser" target="_blank">Google Chrome</a> or <a href="http://mozilla.com/firefox" target="_blank">Firefox</a> on Windows and Mac.</small>
+                <small>This plugin supports all modern browsers including Chrome, Firefox, Safari and IE10+ on Windows and Mac. You may need to restart your browser once the installation has completed.</small><br>
                 <a id="setup-torque" class="btn-lg">SETUP NOW</a>
             </p>
             <p class="warning"><strong>Warning</strong>: Streaming movies in this way might not be legal in your country, so use this service at your own risk.</p>
@@ -378,17 +381,17 @@
             <p>If you are experiencing issues setting up the Torque plugin, please note that Google Chrome has recently disabled the use of plugins in it's latest update.</p>
             <p>We're working hard on a fix but in the meantime, please use the following workaround to continue using <span class="brand">webflix.me</span>:</p>
             <ol>
-                <li>Enter <code>chrome://flags/#enable-npapi</code> into the Chrome address bar</li>
-                <li>Re-enable the NPAPI plugin setting by clicking 'Enable'</li>
-                <li>Hit 'Relaunch Now' at the bottom of the page.</li>
+                <li><p>Enter <code>chrome://flags/#enable-npapi</code> into the Chrome address bar</p></li>
+                <li><p>Re-enable the NPAPI plugin setting by clicking 'Enable'</p></li>
+                <li><p>Hit 'Relaunch Now' at the bottom of the page.</p></li>
             </ol>
-            <p>Alternatively, you could make the switch to <a href="http://mozilla.com/firefox" target="_blank">Firefox</a> or <a href="https://www.apple.com/safari" target="_blank">Safari</a>.</p>
+            <p>Alternatively, you could make the switch to <a href="https://www.apple.com/safari" target="_blank">Safari</a> or <a href="http://mozilla.com/firefox" target="_blank">Firefox</a>.</p>
             <p>For more information on Google's decision to disable this setting by default, <a href="http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html" target="_blank">read the blog post here</a>.</p>
         </div>
     </div>
     <div id="settings-modal" class="modal" style="display: none">
         <h2 class="modal-title">Settings</h2>
-        <div class="modal-desc"><span class="brand">webflix.me</span> 3.2.2</div>
+        <div class="modal-desc"><span class="brand">webflix.me</span> 3.3</div>
         <hr>
         <form class="modal-content" id="settings">
             <h3 class="control control-header">Interface</h3>
@@ -442,7 +445,7 @@
                 <hr>
                 <h3 class="faq-title">How does it work?</h3>
                 <div class="faq-content">
-                    Simply put, it works by leveraging peer-to-peer technology to stream video files from a network of other users - as opposed to a central server.
+                    It works by leveraging peer-to-peer technology to stream video files from a network of other users - as opposed to a central server.
                     This is known as the BitTorrent protocol and is a safe and widely used way of sharing files. <a href="http://en.wikipedia.org/wiki/BitTorrent_(protocol)" target="_blank">More info &raquo;</a>
                 </div>
                 <hr>
@@ -457,16 +460,15 @@
             <div>
                 <h3 class="faq-title">Which browsers are supported?</h3>
                 <div class="faq-content">
-                    <span class="brand">webflix.me</span> is currently only supported in the latest versions of Google Chrome and Firefox on Windows and Mac.
-                    This limitation is due to the Torque plugin's limited browser support.
-                    If support is added to Torque, it will be added here.
+                    <span class="brand">webflix.me</span> now supports all modern browsers, including Chrome, Firefox, Safari and IE10+ on Windows and Mac. Yay!
                 </div>
                 <hr>
                 <h3 class="faq-title">Where does <span class="brand">webflix.me</span> get its data?</h3>
                 <div class="faq-content">
                     There is no data stored on the <span class="brand">webflix.me</span> server other than the files required to run the application - all other data is pulled from other services.
-                    Torrents for movies are indexed by <a href="http://yify-torrents.com" target="_blank">YIFY Torrents</a> and torrents for TV shows are indexed by <a href="http://kickass.to" target="_blank">Kickass Torrents</a>.
-                    This data is then combined with information from <a href="http://www.themoviedb.org" target="_blank">TMDB</a> to produce a clean and simple interface.
+                    Torrents for movies are indexed by <a href="http://yts.to" target="_blank">YIFY Torrents</a> and torrents for TV shows are indexed by <a href="http://kickass.to" target="_blank">Kickass Torrents</a>.
+                    This data is then combined with information from <a href="http://www.themoviedb.org" target="_blank">TMDB</a> and <a href="http://opensubtitles.org" target="_blank">OpenSubtitles.org</a> to produce a clean and simple interface.
+
                 </div>
                 <hr>
                 <h3 class="faq-title">Is this in any way affiliated with Popcorn Time or Time4Popcorn?</h3>
