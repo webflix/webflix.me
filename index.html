@@ -391,7 +391,7 @@
     </div>
     <div id="settings-modal" class="modal" style="display: none">
         <h2 class="modal-title">Settings</h2>
-        <div class="modal-desc"><span class="brand">webflix.me</span> 3.3.1</div>
+        <div class="modal-desc"><span class="brand">webflix.me</span> 3.3.2</div>
         <hr>
         <form class="modal-content" id="settings">
             <h3 class="control control-header">Interface</h3>
@@ -592,6 +592,24 @@
                 </div>
             </div>
             <div id="tv-show-torrent-links" class="navigable-pane link-list" data-pane-number="0"></div>
+        </div>
+    </div>
+    <div id="tv-show-season-torrent-links-modal" class="modal" style="display: none">
+        <h2 class="modal-title">Sources</h2>
+        <div class="modal-desc">
+            <p>Choose one of the following links to begin streaming a full season. This can be useful if there are no links for the episode you want.</p>
+            <p class="warning">Note: These links were obtained using popular torrent sources on the internet, however they have not been verified by <span class="brand">webflix.me</span>. Proceed at your own risk.</p>
+        </div>
+        <div class="modal-content" style="padding: 0">
+            <div id="tv-show-season-torrent-link-template" class="link navigable-item" style="display: none">
+                <div class="link-name"></div>
+                <div class="link-detailed"></div>
+                <div class="link-info">
+                    <span class="link-info-basic"><i class="icon-bolt"></i></span>
+                    <span class="link-info-detailed"></span>
+                </div>
+            </div>
+            <div id="tv-show-season-torrent-links" class="navigable-pane link-list" data-pane-number="0"></div>
         </div>
     </div>
     <div id="file-list-modal" class="modal" style="display: none">
